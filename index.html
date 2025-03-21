@@ -3,58 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diego Prayudha - Portfolio</title>
+    <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">Diego Prayudha</a>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h1>Your Name</h1>
+            <p>Machine Learning Engineer</p>
+            <p>Personal repository for code/projects</p>
+            <a href="https://github.com/yourgithub" class="github-link">View my GitHub</a>
+        </aside>
+        <main class="content">
+            <h2>Data Science & AI Portfolio</h2>
+            <p><strong>Technical Skills:</strong> Python, Langchain, Elasticsearch, MLflow</p>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Diego Prayudha</h1>
-                <p>Data Scientist & Machine Learning Engineer</p>
-                <a href="#contact" class="btn">Contact Me</a>
-            </div>
-        </div>
-    </section>
+            <h3>Education</h3>
+            <p><strong>Your University</strong><br> Bachelor’s Degree in Computer Science (Year - Year)</p>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://via.placeholder.com/400x400" alt="Diego Prayudha">
-                </div>
-                <div class="about-text">
-                    <h3>Passionate AI Engineer with a Focus on NLP and RAG</h3>
-                    <p>I am a Data Scientist and Machine Learning Engineer specializing in NLP, Retrieval-Augmented Generation, and large-scale data processing.</p>
-                    <div class="skills">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Elasticsearch</span>
-                        <span class="skill-tag">LangChain</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h3>Work Experience</h3>
+            <p><strong>Machine Learning Engineer</strong> @ Your Company (Year - Present)</p>
+            <ul>
+                <li>Developed AI models for real-world applications.</li>
+                <li>Integrated Langchain and Elasticsearch for chatbot development.</li>
+                <li>Deployed MLflow on Google Colab for experiment tracking.</li>
+            </ul>
 
-    <script src="script.js"></script>
+            <h3>Projects</h3>
+            <p><strong>Chatbot with RAG</strong> - Implemented Retrieval-Augmented Generation using Langchain and Elasticsearch.</p>
+            <p><strong>MLflow Deployment</strong> - Set up MLflow for tracking experiments in limited-resource environments.</p>
+        </main>
+    </div>
 </body>
 </html>
