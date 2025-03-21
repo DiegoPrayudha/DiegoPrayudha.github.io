@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sidebar {
+    background-color: #f0f2f5;
+    padding: 20px;
+    text-align: center;
+    width: 35%;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.github-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding: 20px;
+    width: 65%;
+}
+
+h1 {
+    color: #007bff;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+p {
+    margin: 10px 0;
+}
