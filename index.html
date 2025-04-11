@@ -5,874 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diego Prayudha - Portfolio</title>
     <style>
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        /* Variables */
-        :root {
-            --primary-color: #2e78b5;
-            --secondary-color: #0d47a1;
-            --accent-color: #64b5f6;
-            --bg-color: #f5f9fc;
-            --text-color: #333;
-            --light-gray: #eee;
-            --white: #fff;
-            --shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background-color: var(--white);
-            box-shadow: var(--shadow);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 20px;
-        }
-        
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 60px;
-            background: linear-gradient(to right, #2e78b5, #64b5f6);
-            color: white;
-        }
-        
-        .hero-content {
+            padding: 20px;
             max-width: 800px;
+            margin: 0 auto;
+            color: #333;
         }
         
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--white);
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary-color);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            display: inline-block;
-            position: relative;
+        h1 {
+            color: #2e78b5;
+            border-bottom: 1px solid #eee;
             padding-bottom: 10px;
         }
         
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background-color: var(--accent-color);
+        h2 {
+            color: #2e78b5;
+            margin-top: 30px;
         }
         
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
+        .project {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
         }
         
-        .about-img {
-            flex: 1;
-            min-width: 300px;
-            margin-right: 40px;
-        }
-        
-        .about-img img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-        
-        .about-text {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .about-text h3 {
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            font-size: 1.8rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 15px;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        
-        .skill-tag {
-            background-color: var(--light-gray);
-            color: var(--text-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-        
-        /* Projects Section */
-        .projects {
-            padding: 80px 0;
-            background-color: var(--bg-color);
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .project-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-        
-        .project-content {
-            padding: 20px;
-        }
-        
-        .project-content h3 {
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .project-technologies {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 10px 0;
-        }
-        
-        .tech-tag {
-            background-color: var(--light-gray);
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-        
-        .project-links {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-        
-        .project-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-        
-        .project-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* Experience Section */
-        .experience {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: var(--light-gray);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-content {
-            padding: 20px;
-            background-color: var(--bg-color);
-            position: relative;
-            border-radius: 6px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-        
-        .timeline-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .timeline-date {
-            color: var(--text-color);
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: var(--white);
-            border: 4px solid var(--accent-color);
-            top: 20px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .timeline-item:nth-child(odd)::after {
-            right: -10px;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
-        
-        /* Contact Section */
         .contact {
-            padding: 80px 0;
-            background-color: var(--bg-color);
-        }
-        
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-            margin-right: 20px;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            margin-right: 15px;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--light-gray);
-            border-radius: 5px;
-            transition: border-color 0.3s;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 30px 0;
+            margin-top: 40px;
             text-align: center;
         }
         
-        .social-links {
-            margin-bottom: 20px;
-        }
-        
-        .social-link {
-            display: inline-flex;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            margin: 0 10px;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
+        a {
+            color: #2e78b5;
             text-decoration: none;
-            transition: all 0.3s ease;
         }
         
-        .social-link:hover {
-            background-color: var(--white);
-            color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
-        /* Responsive Styles */
-        @media screen and (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 60px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 60px);
-                background-color: var(--white);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: left 0.3s ease;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 20px 0;
-            }
-            
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item::after {
-                left: 21px;
-            }
-            
-            .timeline-item:nth-child(odd)::after {
-                left: 21px;
-                right: auto;
-            }
-        }
-        
-        /* Animation Classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">Diego Prayudha</a>
-                <div class="hamburger">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#projects">Proyek</a></li>
-                    <li><a href="#experience">Pengalaman</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <h1>Diego Prayudha</h1>
-                <p>Developer & Designer Kreatif</p>
-                <a href="#contact" class="btn">Hubungi Saya</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Tentang Saya</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-img fade-in">
-                    <img src="https://via.placeholder.com/400x400" alt="Diego Prayudha">
-                </div>
-                <div class="about-text fade-in">
-                    <h3>Saya adalah Developer dengan Passion untuk Solusi Kreatif</h3>
-                    <p>Halo! Saya Diego Prayudha, seorang developer yang fokus pada pembuatan aplikasi web dan mobile yang menarik dan fungsional. Dengan pengalaman dalam berbagai teknologi web modern, saya siap membantu mengubah ide Anda menjadi kenyataan digital.</p>
-                    <p>Saya percaya bahwa teknologi yang baik adalah yang dapat menyelesaikan masalah nyata dengan cara yang intuitif dan efisien. Dalam setiap proyek, saya selalu berusaha menggabungkan keindahan desain dengan kefungsionalan teknis.</p>
-                    <div class="skills">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">UI/UX Design</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Proyek Terbaru</h2>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card fade-in">
-                    <div class="project-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Proyek 1">
-                    </div>
-                    <div class="project-content">
-                        <h3>Aplikasi Web E-commerce</h3>
-                        <p>Platform e-commerce lengkap dengan fitur keranjang belanja, pembayaran, dan panel admin.</p>
-                        <div class="project-technologies">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Demo Live</a>
-                            <a href="#" target="_blank">Kode Sumber</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card fade-in">
-                    <div class="project-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Proyek 2">
-                    </div>
-                    <div class="project-content">
-                        <h3>Aplikasi Chatting Real-time</h3>
-                        <p>Aplikasi chatting dengan fitur pesan real-time, grup chat, dan berbagi file.</p>
-                        <div class="project-technologies">
-                            <span class="tech-tag">Socket.io</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">React</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Demo Live</a>
-                            <a href="#" target="_blank">Kode Sumber</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card fade-in">
-                    <div class="project-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Proyek 3">
-                    </div>
-                    <div class="project-content">
-                        <h3>Dashboard Analitik</h3>
-                        <p>Dashboard interaktif untuk visualisasi dan analisis data bisnis.</p>
-                        <div class="project-technologies">
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Demo Live</a>
-                            <a href="#" target="_blank">Kode Sumber</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Pengalaman Kerja</h2>
-            </div>
-            <div class="timeline">
-                <!-- Experience 1 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2022 - Sekarang</span>
-                        <h3>Senior Frontend Developer</h3>
-                        <p>ABC Tech</p>
-                        <ul>
-                            <li>Mengembangkan dan memelihara aplikasi web berbasis React</li>
-                            <li>Berkolaborasi dengan tim desain untuk implementasi UI/UX</li>
-                            <li>Mengoptimalkan kinerja aplikasi untuk pengalaman pengguna yang lebih baik</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Experience 2 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2020 - 2022</span>
-                        <h3>Web Developer</h3>
-                        <p>XYZ Company</p>
-                        <ul>
-                            <li>Membangun website responsif menggunakan HTML, CSS, dan JavaScript</li>
-                            <li>Mengimplementasikan sistem manajemen konten untuk klien</li>
-                            <li>Integrasi API dan layanan pihak ketiga</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Experience 3 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2018 - 2020</span>
-                        <h3>Junior Developer</h3>
-                        <p>Startup Digital</p>
-                        <ul>
-                            <li>Membantu pengembangan fitur baru untuk platform e-learning</li>
-                            <li>Pemecahan masalah bug dan peningkatan kualitas kode</li>
-                            <li>Berpartisipasi dalam code review dan pair programming</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Hubungi Saya</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3>Informasi Kontak</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>diego.prayudha@example.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <h4>Telepon</h4>
-                            <p>+62 812 3456 7890</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h4>Lokasi</h4>
-                            <p>Jakarta, Indonesia</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form fade-in">
-                    <h3>Kirim Pesan</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nama</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea id="message" class="form-control" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Kirim Pesan</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#" class="social-link" target="_blank">FB</a>
-                <a href="#" class="social-link" target="_blank">TW</a>
-                <a href="#" class="social-link" target="_blank">IG</a>
-                <a href="#" class="social-link" target="_blank">LI</a>
-                <a href="#" class="social-link" target="_blank">GH</a>
-            </div>
-            <p>&copy; 2025 Diego Prayudha. Semua Hak Dilindungi.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Mobile Navigation
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a nav item
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerOffset = 70;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Scroll animation
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementBottom = element.getBoundingClientRect().bottom;
-                const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
-                
-                if (isVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        };
-        
-        // Run on load
-        fadeInOnScroll();
-        
-        // Run on scroll
-        window.addEventListener('scroll', fadeInOnScroll);
-        
-        // Contact form handling
-        const contactForm = document.getElementById('contactForm');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-                
-                // You would normally send this data to a server
-                // For now, we'll just show an alert
-                alert(`Terima kasih ${name}! Pesan Anda telah diterima. Kami akan menghubungi Anda melalui ${email} segera.`);
-                
-                // Reset form
-                contactForm.reset();
-            });
-        }
-    </script>
+    <h1>Diego Prayudha</h1>
+    <p>Selamat datang di portofolio saya. Saya adalah [profesi/posisi Anda] dengan keahlian dalam [keahlian Anda].</p>
+    
+    <h2>Tentang Saya</h2>
+    <p>Saya adalah seorang profesional yang berfokus pada [bidang/minat Anda]. Dengan pengalaman selama [tahun] dalam industri, saya memiliki keahlian dalam [keahlian 1], [keahlian 2], dan [keahlian 3].</p>
+    
+    <h2>Pendidikan</h2>
+    <ul>
+        <li><strong>[Gelar Anda]</strong> - [Universitas Anda] ([Tahun lulus])</li>
+    </ul>
+    
+    <h2>Pengalaman Kerja</h2>
+    <div class="project">
+        <h3>[Posisi] di [Perusahaan]</h3>
+        <p>[Tahun mulai] - [Tahun selesai]</p>
+        <ul>
+            <li>Bertanggung jawab untuk [tugas/tanggung jawab 1]</li>
+            <li>Mengelola [tugas/tanggung jawab 2]</li>
+            <li>Mengembangkan [tugas/tanggung jawab 3]</li>
+        </ul>
+    </div>
+    
+    <h2>Proyek</h2>
+    <div class="project">
+        <h3>[Nama Proyek 1]</h3>
+        <p>Deskripsi singkat proyek dan teknologi yang digunakan. Apa yang Anda lakukan dan apa hasilnya.</p>
+        <p><a href="[URL proyek]">Lihat proyek</a></p>
+    </div>
+    
+    <div class="project">
+        <h3>[Nama Proyek 2]</h3>
+        <p>Deskripsi singkat proyek dan teknologi yang digunakan. Apa yang Anda lakukan dan apa hasilnya.</p>
+        <p><a href="[URL proyek]">Lihat proyek</a></p>
+    </div>
+    
+    <h2>Keahlian Teknis</h2>
+    <ul>
+        <li>[Keahlian 1]</li>
+        <li>[Keahlian 2]</li>
+        <li>[Keahlian 3]</li>
+        <li>[Keahlian 4]</li>
+    </ul>
+    
+    <div class="contact">
+        <p>
+            <a href="https://github.com/DiegoPrayudha">GitHub</a> |
+            <a href="[LinkedIn URL]">LinkedIn</a> |
+            <a href="mailto:[email Anda]">Email</a>
+        </p>
+    </div>
 </body>
 </html>
